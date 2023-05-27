@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "gamezone",
-    "slug": "gamezone",
+    "slug": "game-zone",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -25,6 +25,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "46752faf-1594-49ce-8859-249c94c24bf3"
+      }
+    },
+    "owner": "nomenclature"
   }
 }
