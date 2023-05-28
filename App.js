@@ -1,9 +1,9 @@
 import React from 'react';
-import Home from './screens/home';
+import Navigator from './routes/home_stack';
 
 export default function App() {
   return (
-    <Home />
+    <Navigator />
   );
 }
 
