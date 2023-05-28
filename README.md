@@ -1,3 +1,5 @@
+![game review banner](https://github.com/nomenklatur/game-review/assets/88763669/aad50df3-d98d-4bf3-b1cd-80228d32f0c6)
+
 # Game Review
 > Mobile application created to help gamers review their favourite games.
 
