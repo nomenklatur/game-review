@@ -1,18 +1,25 @@
-import { createStackNavigator } from "react-navigation-stack";
-import { createAppContainer } from "react-navigation";
-
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import React from 'react';
 import Home from '../screens/home';
-import ReviewDetails from '../screens/review_detail';
+import ReviewDetail from '../screens/review_detail';
+import Header from '../shared/header'
 
-const screens = {
-  Home: {
-    screen: Home
-  },
-  ReviewDetails: {
-    screen: ReviewDetails
-  }
-};
+const homeStack = createNativeStackNavigator();
 
-const HomeStack = createStackNavigator(screens);
-
-export default createAppContainer(HomeStack);
+export default function HomeStack() {
+  return (
+    <homeStack.Navigator>
+      <homeStack.Screen 
+        name='Home' 
+        component={Home} 
+        options={({navigation}) => ({
+          headerTitle: () => <Header navigation={navigation}/>
+        })}
+      />
+      <homeStack.Screen 
+        name='ReviewDetail' 
+        component={ReviewDetail} 
+      />
+    </homeStack.Navigator>
+  )
+}
