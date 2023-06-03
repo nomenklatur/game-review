@@ -9,7 +9,7 @@ export default function AboutStack() {
   return (
     <aboutStack.Navigator>
       <aboutStack.Screen 
-        name='About' 
+        name='About Gamezone' 
         component={About}
         options={({navigation}) => ({
           headerTitle: () => <Header navigation={navigation}/>

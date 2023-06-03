@@ -10,8 +10,8 @@ export default function Drawer(){
   return (
     <NavigationContainer>
       <drawerNavigator.Navigator initialRouteName="Home" screenOptions={ { headerShown: false }}>
-        <drawerNavigator.Screen name='HomeStack' component={HomeStack}/>
-        <drawerNavigator.Screen name='AboutStack' component={AboutStack} />
+        <drawerNavigator.Screen name='Home' component={HomeStack}/>
+        <drawerNavigator.Screen name='About' component={AboutStack} />
       </drawerNavigator.Navigator>
     </NavigationContainer>
   )

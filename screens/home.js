@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, FlatList, TouchableOpacity, Text } from 'react-native';
 import { globalStyles } from '../styles/global';
+import Card from '../shared/card';
 
 export default function Home({ navigation }) { //automatically added props.navigation when a screen added to createStackNavigation
   const [reviews, setReviews ] = useState([
@@ -17,7 +18,9 @@ export default function Home({ navigation }) { //automatically added props.navig
         data={reviews}
         renderItem={({ item }) => (
           <TouchableOpacity onPress={() => pressHandler(item)}>
-            <Text style={globalStyles.titleText}>{ item.title }</Text>
+            <Card>
+              <Text style={globalStyles.titleText}>{ item.title }</Text>
+            </Card>
           </TouchableOpacity>
         )}
       />
