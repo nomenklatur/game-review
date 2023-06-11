@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { View, FlatList, TouchableOpacity, Text, Modal, StyleSheet } from 'react-native';
+import { View, FlatList, TouchableOpacity, Text, Modal, StyleSheet, TouchableWithoutFeedback, Keyboard } from 'react-native';
 import { globalStyles } from '../styles/global';
 import Card from '../shared/card';
 import { MaterialIcons } from '@expo/vector-icons';
+import ReviewForm from './review_form';
 
 export default function Home({ navigation }) { //automatically added props.navigation when a screen added to createStackNavigation
   const [modalOpen, setModalOpen] = useState(false);
@@ -11,22 +12,32 @@ export default function Home({ navigation }) { //automatically added props.navig
     { title: 'Game 2', rating: 2, body: 'some review', key: 2},
     { title: 'Game 3', rating: 3, body: 'some review', key: 3},
   ]);
+
   const pressHandler = (reviewItem) => {
     navigation.navigate('ReviewDetail', reviewItem);
   }
+
+  const addReview = (review) => {
+    review.key = Math.floor(Math.random() * 900).toString()
+    setReviews((currentReviews) => [review, ...currentReviews]);
+    setModalOpen(false);
+  }
+
   return ( 
     <View style={globalStyles.container}>
 
       <Modal visible={modalOpen} animationType='slide'>
-        <View>
-          <MaterialIcons 
-          name='close'
-          size={24}
-          onPress={() => setModalOpen(false)}
-          style={{...styles.modalToggle, ...styles.modalClosed}}
-          />
-          <Text>this is some text</Text>
-        </View>
+        <TouchableWithoutFeedback>
+          <View style={styles.modalContent}>
+            <MaterialIcons 
+            name='close'
+            size={24}
+            onPress={() => setModalOpen(false)}
+            style={{...styles.modalToggle, ...styles.modalClosed}}
+            />
+            <ReviewForm addReview={addReview}/>
+          </View>
+        </TouchableWithoutFeedback>
       </Modal>
 
       <MaterialIcons 

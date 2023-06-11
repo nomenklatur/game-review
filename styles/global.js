@@ -12,6 +12,24 @@ export const globalStyles = StyleSheet.create({
   paragraphText: {
     marginVertical: 8,
     lineHeight: 20
+  },
+  input: {
+    borderWidth: 1,
+    borderColor: '#ddd',
+    padding: 10,
+    fontSize: 18,
+    borderRadius: 6,
+    marginHorizontal: 20,
+    marginBottom: 10
+  },
+  button: {
+    height: 50,
+    backgroundColor: 'skyblue',
+    borderRadius: 20,
+    marginHorizontal: 100,
+    alignItems: 'center',
+    justifyContent: 'center',
+    elevation:3,
   }
 });
 
