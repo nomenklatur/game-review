@@ -30,6 +30,13 @@ export const globalStyles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     elevation:3,
+  },
+  errorText: {
+    color: 'crimson',
+    fontWeight: 'bold',
+    marginBottom: 10,
+    marginTop: 6,
+    textAlign: 'center'
   }
 });
 
