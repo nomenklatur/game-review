@@ -1,8 +1,8 @@
 import React from 'react';
 import { Text, View, TextInput, TouchableOpacity } from 'react-native';
-import { globalStyles } from '../styles/global';
+import { globalStyles } from '../utils/styles/global';
 import { Formik } from 'formik';
-import { ReviewSchema } from '../validations/review_schema';
+import { ReviewSchema } from '../services/validations/review_schema';
 
 export default function ReviewForm({ addReview }) {
     return (
@@ -11,7 +11,6 @@ export default function ReviewForm({ addReview }) {
                 validationSchema={ReviewSchema}
                 initialValues={{ title: '', body: '', rating: ''}}
                 onSubmit={(values) => {
-                    //actions.resetForm() to reset forms
                     addReview(values);
                 }}
             >

@@ -1,8 +1,8 @@
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 
-import HomeStack from './home_stack';
-import AboutStack from './about_stack';
+import HomeStack from './stacks/home_stack';
+import AboutStack from './stacks/about_stack';
 
 const drawerNavigator = createDrawerNavigator();
 

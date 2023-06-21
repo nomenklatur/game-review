@@ -1,8 +1,8 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
-import Home from '../screens/home';
-import ReviewDetail from '../screens/review_detail';
-import Header from '../shared/header'
+import Home from '../../screens/home';
+import ReviewDetail from '../../screens/review_detail';
+import Header from '../../components/header';
 
 const homeStack = createNativeStackNavigator();
 
