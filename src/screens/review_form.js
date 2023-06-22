@@ -1,8 +1,10 @@
 import React from 'react';
-import { Text, View, TextInput, TouchableOpacity } from 'react-native';
+import { Text, View, TextInput } from 'react-native';
 import { globalStyles } from '../utils/styles/global';
 import { Formik } from 'formik';
 import { ReviewSchema } from '../services/validations/review_schema';
+import { ADD_BUTTON } from '../utils/const/buttons';
+import Button from '../components/button';
 
 export default function ReviewForm({ addReview }) {
     return (
@@ -42,9 +44,7 @@ export default function ReviewForm({ addReview }) {
                         keyboardType='numeric'
                     />
                     <Text style={globalStyles.errorText}> { props.touched.rating && props.errors.rating } </Text>
-                    <TouchableOpacity activeOpacity={0.95} style={globalStyles.button} onPress={props.handleSubmit}>
-                        <Text>Submit</Text>
-                    </TouchableOpacity>
+                    <Button buttonType={ADD_BUTTON} handlerFunc={props.handleSubmit} />
                 </View>
             )}
             </Formik>
