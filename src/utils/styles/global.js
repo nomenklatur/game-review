@@ -22,21 +22,19 @@ export const globalStyles = StyleSheet.create({
     marginHorizontal: 20,
     marginBottom: 10
   },
-  button: {
-    height: 50,
-    backgroundColor: 'skyblue',
-    borderRadius: 20,
-    marginHorizontal: 100,
-    alignItems: 'center',
-    justifyContent: 'center',
-    elevation:3,
-  },
   errorText: {
     color: 'crimson',
     fontWeight: 'bold',
     marginBottom: 10,
     marginTop: 6,
     textAlign: 'center'
+  },
+  flexContainer: {
+    flex: 1,
+    padding: 20,
+    flexDirection: "row",
+    justifyContent: "center",
+    maxHeight: "15%",
   }
 });
 
