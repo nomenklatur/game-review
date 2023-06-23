@@ -7,7 +7,13 @@ import Card from '../components/card';
 import Button from '../components/button';
 
 export default function ReviewDetail({ navigation, route }) {
-  const { body, title, rating } = route.params;
+  
+  const { deleteReview, reviewItem } = route.params;
+  const { id, body, title, rating } = reviewItem;
+  const deleteHandler = (id) => {
+    deleteReview(id);
+    navigation.goBack();
+  }
   return (
     <View style={globalStyles.container}>
       <Card>
@@ -20,7 +26,7 @@ export default function ReviewDetail({ navigation, route }) {
       </Card>
       <View style={globalStyles.flexContainer}>
         <Button buttonType={UPDATE_BUTTON} />
-        <Button buttonType={DELETE_BUTTON} />
+        <Button buttonType={DELETE_BUTTON} handlerFunc={() => deleteHandler(id)}/>
       </View>
     </View>
   )

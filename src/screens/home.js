@@ -14,13 +14,18 @@ export default function Home({ navigation }) {
   const [reviews, setReviews ] = useState(reviewsDummy);
 
   const pressHandler = (reviewItem) => {
-    navigation.navigate('ReviewDetail', reviewItem);
+    navigation.navigate('ReviewDetail', {reviewItem, deleteReview });
   }
 
   const addReview = (review) => {
     review.id = Math.floor(Math.random() * 900).toString()
     setReviews((currentReviews) => [review, ...currentReviews]);
     setModalOpen(false);
+  }
+
+  const deleteReview = (id) => {
+    const newReviews = reviews.filter((review) => review.id != id);
+    setReviews(newReviews);
   }
 
   return ( 
