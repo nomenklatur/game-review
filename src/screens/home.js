@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, FlatList, TouchableOpacity, Text, Modal, StyleSheet, TouchableWithoutFeedback, Keyboard } from 'react-native';
+import { View, FlatList, TouchableOpacity, Text, Modal, TouchableWithoutFeedback, Keyboard } from 'react-native';
 import { globalStyles } from '../utils/styles/global';
 import { modalStyle } from '../utils/styles/modal_style';
 import { reviewsDummy } from '../utils/dummies/reviews_dummy';
@@ -14,7 +14,7 @@ export default function Home({ navigation }) {
   const [reviews, setReviews ] = useState(reviewsDummy);
 
   const pressHandler = (reviewItem) => {
-    navigation.navigate('ReviewDetail', {reviewItem, deleteReview });
+    navigation.navigate('ReviewDetail', {reviewItem, deleteReview, updateReview });
   }
 
   const addReview = (review) => {
@@ -26,6 +26,11 @@ export default function Home({ navigation }) {
   const deleteReview = (id) => {
     const newReviews = reviews.filter((review) => review.id != id);
     setReviews(newReviews);
+  }
+
+  const updateReview = (review) => {
+    const updatedReviews = reviews.map((item) => item.id == review.id? review: item);
+    setReviews(updatedReviews);
   }
 
   return ( 
